@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/productRow"
+    android:background="@drawable/product_selector_0"
+    android:orientation="horizontal"
+    android:gravity="center_vertical">
+
+
+    <CheckBox
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="24dp"
+        android:paddingRight="10dp"
+        android:paddingEnd="10dp"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:onClick="check"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/checkBox" />
+
+    <TextView
+        android:paddingTop="14dp"
+        android:paddingBottom="14dp"
+        android:maxLines="1"
+        android:ellipsize="middle"
+        android:gravity="start"
+        android:layout_weight="4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/name"
+        android:textColor="@android:color/black"
+        android:id="@+id/label" />
+
+    <TextView
+        android:paddingTop="14dp"
+        android:paddingBottom="14dp"
+        android:layout_marginRight="10dp"
+        android:maxLines="1"
+        android:layout_weight="1"
+        android:ellipsize="middle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/price"
+        android:gravity="end"
+        android:textColor="@android:color/black"
+        android:id="@+id/label2" />
+</LinearLayout>

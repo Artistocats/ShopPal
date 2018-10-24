@@ -1,0 +1,12 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <Preference
+        android:title="@string/pref_title_reset_slt"
+        android:summary="@string/pref_summary_reset_slt"
+        android:key="sltReset"/>
+
+    <Preference android:title="@string/pref_title_factory_reset"
+        android:key="fReset"/>
+
+
+</PreferenceScreen>

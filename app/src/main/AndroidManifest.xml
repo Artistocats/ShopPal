@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.shoppalteam.shoppal" >
+
+    <application
+        android:name=".misc.BaseApplication"
+        android:allowBackup="false"
+        android:configChanges="keyboardHidden|orientation|screenSize"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:screenOrientation="portrait"
+        android:theme="@style/AppTheme" >
+
+        <provider
+            android:exported="false"
+            android:name="com.shoppalteam.shoppal.contentprovider.ProductContentProvider"
+            android:authorities="com.shoppalteam.shoppal.contentprovider" >
+        </provider>
+
+        <activity
+            android:name="com.shoppalteam.shoppal.activities.MainActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
+            android:theme="@style/MainCustomTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.shoppalteam.shoppal.activities.EditProductActivity"
+            android:label="@string/title_activity_edit_product"
+            android:parentActivityName="com.shoppalteam.shoppal.activities.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.shoppalteam.shoppal.activities.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.shoppalteam.shoppal.activities.AboutActivity"
+            android:label="@string/title_activity_about"
+            android:parentActivityName="com.shoppalteam.shoppal.activities.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.shoppalteam.shoppal.activities.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.shoppalteam.shoppal.activities.SettingsActivity"
+            android:label="@string/settings"
+            android:parentActivityName="com.shoppalteam.shoppal.activities.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.shoppalteam.shoppal.activities.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.shoppalteam.shoppal.activities.StatisticsActivity"
+            android:label="@string/statistics"
+            android:parentActivityName="com.shoppalteam.shoppal.activities.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.shoppalteam.shoppal.activities.MainActivity" />
+        </activity>
+
+        <receiver android:name="com.shoppalteam.shoppal.misc.AlarmReceiver">
+            <intent-filter>
+                <action android:name="android.media.action.DISPLAY_NOTIFICATION" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

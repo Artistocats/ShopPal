@@ -1,0 +1,179 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.shoppalteam.shoppal.activities.EditProductActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        layout="@layout/toolbar"
+        android:id="@+id/my_toolbar"
+     />
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/scrollview"
+        android:layout_below="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:descendantFocusability="beforeDescendants"
+            android:focusableInTouchMode="true"
+            android:id="@+id/editProductLayout">
+
+
+            <TextView
+                android:id="@+id/nameLabel"
+                android:text="@string/name"
+                android:textColor="@color/primary"
+                android:textStyle="bold"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" />
+
+
+            <EditText
+                android:id="@+id/name"
+                android:inputType="text"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:hint="@string/new_product"
+                android:maxLength="30"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nameLabel"
+                android:layout_centerHorizontal="true" />
+
+
+
+            <TextView
+                android:textColor="@color/primary"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/edit_product_top_margin"
+                android:id="@+id/priceLabel"
+                android:text="@string/price"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/name"
+                android:layout_centerHorizontal="true" />
+
+
+            <EditText
+                android:id="@+id/price"
+                android:text="@string/zero"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:inputType="numberDecimal"
+                android:selectAllOnFocus="true"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/priceLabel"
+                android:layout_centerHorizontal="true" />
+
+
+
+
+
+            <TextView
+                android:textColor="@color/primary"
+                android:textStyle="bold"
+                android:id="@+id/quantityLabel"
+                android:layout_marginTop="@dimen/edit_product_top_margin"
+                android:text="@string/quantity"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/price"
+                android:layout_centerHorizontal="true" />
+
+            <Button
+                android:id="@+id/minus"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/quantityLabel"
+                android:layout_toStartOf="@+id/quantityLabel"
+                android:backgroundTint="@color/primary"
+                android:clickable="true"
+                android:text="@string/minus_button"
+                android:textSize="25sp"
+                android:textColor="@color/white"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:selectAllOnFocus="true"
+                android:maxLength="4"
+                android:id="@+id/quantity"
+                android:layout_below="@+id/quantityLabel"
+                android:layout_alignEnd="@+id/nameLabel"
+                android:layout_alignStart="@+id/nameLabel"
+                android:textIsSelectable="false"
+                android:clickable="false"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:gravity="center"
+                android:text="@string/one" />
+
+            <Button
+                android:id="@+id/plus"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/quantityLabel"
+                android:layout_toEndOf="@+id/quantityLabel"
+                android:backgroundTint="@color/primary"
+                android:clickable="true"
+                android:text="@string/plus_button"
+                android:textSize="25sp"
+                android:textColor="@color/white"/>
+
+            <TextView
+                android:textColor="@color/primary"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/edit_product_top_margin_2"
+                android:id="@+id/notesLabel"
+                android:text="@string/notes"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/quantity"
+                android:layout_centerHorizontal="true" />
+
+            <EditText
+                android:id="@+id/notes"
+                android:inputType="textMultiLine"
+                android:maxLength="300"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:hint="@string/useful_information"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/notesLabel"
+                android:layout_centerHorizontal="true"
+                android:maxWidth="240dp" />
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:onClick="saveState"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:src="@drawable/ic_done"
+        android:id="@+id/save"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        style="@style/Widget.Design.FloatingActionButton" />
+
+</RelativeLayout>

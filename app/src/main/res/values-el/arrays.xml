@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Intervals">
+        <item>12 Ώρες</item>
+        <item>1 Μέρα</item>
+        <item>2 Μέρες</item>
+        <item>3 Μέρες</item>
+        <item>1 Εβδομάδα</item>
+    </string-array>
+
+    <string-array name="IntervalsValues">
+        <item>43200000</item>
+        <item>86400000</item>
+        <item>172800000</item>
+        <item>259200000</item>
+        <item>604800000</item>
+    </string-array>
+</resources>

@@ -1,0 +1,51 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.shoppalteam.shoppal.activities.MainActivity"
+    android:background="@color/background">
+
+    <include
+        layout="@layout/toolbar"
+        android:id="@+id/my_toolbar"/>
+
+
+    <ListView
+        android:dividerHeight="1dp"
+        android:divider="@color/background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/list"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/total"
+        android:layout_below="@+id/my_toolbar" />
+
+
+    <TextView
+        android:layout_marginTop="1dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#a7c8ff"
+        android:padding="5dp"
+        android:ellipsize="middle"
+        android:text="@string/totalField"
+        android:id="@+id/total"
+        android:layout_above="@+id/cartButton"
+        android:textColor="@color/gray"
+        android:singleLine="true" />
+
+
+    <ImageButton
+        android:onClick="buy"
+        android:state_enabled="false"
+        android:src="@drawable/ic_shopping_cart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cartButton"
+        android:background="@drawable/cart_selector"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/buy" />
+
+</RelativeLayout>
